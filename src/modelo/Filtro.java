@@ -10,78 +10,109 @@ package modelo;
  * @author gabyordonez
  */
 public class Filtro {
-    private int id;
-    private String codigo;
-    private String marca;
-    private int stock;
-    private boolean existencia;
+    private int afp;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private String profesion;
+    private boolean estado;
     
     public Filtro(){
         
     }
     
-    public Filtro(int id, String codigo, String marca, int stock, boolean existencia){
-        this.id=id;
-        this.marca=marca;
-        this.stock=stock;
-        this.existencia=existencia;
-        this.codigo=codigo;
+    public Filtro(int afp, String nombre, String apellido, int edad, boolean estado, String profesion){
+        this.afp = afp;
+        this.nombre = nombre;
+        this.edad=edad;
+        this.estado=estado;
+        this.apellido = apellido;
+        this.profesion = profesion; 
     }
-    public Filtro(String codigo, String marca, int stock, boolean existencia){
-        this.codigo=codigo;
-        this.marca=marca;
-        this.stock=stock;
-        this.existencia=existencia;
+    public Filtro(int afp, String nombre,String apellido, int edad, boolean estado){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad=edad;
+        this.estado=estado;
+        this.afp = afp; 
     }
-    public Filtro(String marca, int stock, boolean existencia){
-        this.marca=marca;
-        this.stock=stock;
-        this.existencia=existencia;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public boolean isExistencia() {
-        return existencia;
-    }
-
-    public void setExistencia(boolean existencia) {
-        this.existencia = existencia;
+    public Filtro(int afp, String nombre, String apellido, boolean estado){
+        this.afp = afp;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.estado = estado;
     }
     
-    public boolean getExistencia(){
-        return existencia;
+    public Filtro(String nombre, String apellido, String profesion, boolean estado){
+        this.profesion = profesion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.estado = estado;
     }
     
+    public Filtro(String nombre, String apellido, boolean estado){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.estado = estado;
+    }
+    
+    public Filtro(int afp, boolean estado){
+        this.afp = afp;
+        this.estado = estado;
+    }
+
+    
+    
+    public int getAfp() {
+        return afp;
+    }
+
+    public void setAfp(int afp) {
+        this.afp = afp;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+    
+    public boolean getEstado(){
+        return estado;
+    }
+    
+        public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
     
 }
