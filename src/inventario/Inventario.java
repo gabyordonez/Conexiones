@@ -5,6 +5,8 @@
  */
 package inventario;
 
+import vista.Consulta;
+
 /**
  *
  * @author gabyordonez
@@ -12,4 +14,5 @@ package inventario;
 public class Inventario {
     public static void main(String[] args) {
         new Consulta().setVisible(true);
+}
 }
