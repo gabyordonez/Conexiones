@@ -10,5 +10,6 @@ package inventario;
  * @author gabyordonez
  */
 public class Inventario {
-    
+    public static void main(String[] args) {
+        new Consulta().setVisible(true);
 }
