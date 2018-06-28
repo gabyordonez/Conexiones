@@ -164,7 +164,7 @@ public class Consulta extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 FiltroDao fd =new FiltroDao();
-                Filtro f=new Filtro(afp.getText(),nombre.getText(), apellido.getText(), profesion.getSelectedItem().toString(), nombre.getText(), apellido.getText(), Integer.parseInt(estado.getText()),true);
+                Filtro f=new Filtro(afp.getText(),nombre.getText(), apellido.getText(), Integer.parseInt(edad.getText()),profesion.getSelectedItem().toString(),true);
                 if(no.isSelected()){
                     f.setEstado(false);
                 }
@@ -181,8 +181,8 @@ public class Consulta extends JFrame{
         actualizar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                FiltroDao fd= new FiltroDao();
-                Filtro f=new Filtro(afp.getText(), nombre.getText(), apellido.getText(), profesion.getSelectedItem().toString(), estado.getSelectedItem()), true);
+                FiltroDao fd= new FiltroDao(); 
+                Filtro f=new Filtro(afp.getText(), nombre.getText(), apellido.getText(), Integer.parseInt(edad.getText()) ,true);
                 if(no.isSelected()){
                     f.setEstado(false);
                 }
@@ -212,11 +212,8 @@ public class Consulta extends JFrame{
             }
         });
 
-        vaciar.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                limpiarCampos();
-            }
+        vaciar.addActionListener((ActionEvent e) -> {
+            limpiarCampos();
         }); 
     }
     public void limpiarCampos(){
@@ -226,11 +223,8 @@ public class Consulta extends JFrame{
         profesion.setSelectedItem("Ingeniero");
     }
     public static void main(String[] args){
-        java.awt.EventQueue.invokeLater(new Runnable(){
-            @Override
-            public void run() {
-                new Consulta().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Consulta().setVisible(true);
         });
     }
     }

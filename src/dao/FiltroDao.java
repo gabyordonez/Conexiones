@@ -35,7 +35,7 @@ public class FiltroDao implements metodos<Filtro> {
         PreparedStatement ps;
         try {
             ps = con.getCnx().prepareStatement(SQL_INSERT);
-            ps.setInt(1, g.getAfp());
+            ps.setString(1, g.getAfp());
             ps.setString(2, g.getNombre());
             ps.setString(3, g.getApellido());
             ps.setInt(4, g.getEdad());
@@ -82,7 +82,7 @@ public class FiltroDao implements metodos<Filtro> {
             ps.setInt(3, c.getEdad());
             ps.setString(4, c.getProfesion());
             ps.setBoolean(5, c.getEstado());
-            ps.setInt(6, c.getAfp());
+            ps.setString(6, c.getAfp());
             if (ps.executeUpdate() > 0) {
                 return true;
             }
@@ -106,7 +106,7 @@ public class FiltroDao implements metodos<Filtro> {
             ps.setString(1, key.toString());
             rs = ps.executeQuery();
             while (rs.next()) {
-                f = new Filtro(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getBoolean(5));
+                f = new Filtro(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getBoolean(5));
             }
             rs.close();
         } catch (SQLException ex) {
@@ -127,7 +127,7 @@ public class FiltroDao implements metodos<Filtro> {
             s = con.getCnx().prepareStatement(SQL_READALL);
             rs = s.executeQuery(SQL_READALL);
             while (rs.next()) {
-                all.add(new Filtro(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getBoolean(5)));
+                all.add(new Filtro(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getBoolean(5)));
             }
             rs.close();
         } catch (SQLException ex) {

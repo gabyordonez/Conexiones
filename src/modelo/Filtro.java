@@ -10,7 +10,7 @@ package modelo;
  * @author gabyordonez
  */
 public class Filtro {
-    private int afp;
+    private String afp;
     private String nombre;
     private String apellido;
     private int edad;
@@ -21,7 +21,7 @@ public class Filtro {
         
     }
     
-    public Filtro(int afp, String nombre, String apellido, int edad, boolean estado, String profesion){
+    public Filtro(String afp, String nombre, String apellido,int edad, String profesion, boolean estado){
         this.afp = afp;
         this.nombre = nombre;
         this.edad=edad;
@@ -29,45 +29,20 @@ public class Filtro {
         this.apellido = apellido;
         this.profesion = profesion; 
     }
-    public Filtro(int afp, String nombre,String apellido, int edad, boolean estado){
+    public Filtro(String afp, String nombre,String apellido, int edad, boolean estado){
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad=edad;
         this.estado=estado;
         this.afp = afp; 
     }
-    public Filtro(int afp, String nombre, String apellido, boolean estado){
-        this.afp = afp;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.estado = estado;
-    }
-    
-    public Filtro(String nombre, String apellido, String profesion, boolean estado){
-        this.profesion = profesion;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.estado = estado;
-    }
-    
-    public Filtro(String nombre, String apellido, boolean estado){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.estado = estado;
-    }
-    
-    public Filtro(int afp, boolean estado){
-        this.afp = afp;
-        this.estado = estado;
-    }
 
-    
-    
-    public int getAfp() {
+        
+    public String getAfp() {
         return afp;
     }
 
-    public void setAfp(int afp) {
+    public void setAfp(String afp) {
         this.afp = afp;
     }
 
